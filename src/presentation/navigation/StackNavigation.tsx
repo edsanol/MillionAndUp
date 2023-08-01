@@ -1,15 +1,15 @@
-import {View, StatusBar, Image} from 'react-native';
+import { View, StatusBar, Image, Platform } from 'react-native';
 import React from 'react';
-import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
+import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
 import Home from '../screens/home';
 import LinearGradient from 'react-native-linear-gradient';
 import CryptoView from '../screens/crypto';
-import {Crypto} from '../../domain/entities/Crypto';
+import { Crypto } from '../../domain/entities/Crypto';
 
 // Definición de los parámetros de navegación para la pila de navegación.
 export type RootStackParamList = {
   Home: undefined;
-  Crypto: {item: Crypto};
+  Crypto: { item: Crypto };
 };
 
 // Crear una pila de navegación utilizando react-navigation-shared-element.
@@ -20,7 +20,7 @@ const Stack = createSharedElementStackNavigator<RootStackParamList>();
  * Utiliza la pila de navegación para definir las pantallas y sus configuraciones de navegación.
  * @returns {React.ReactNode} Elemento de React que representa la estructura de navegación de la aplicación.
  */
-const StackNavigation = (): React.ReactNode => {
+const StackNavigation = () => {
   return (
     <Stack.Navigator>
       {/* Pantalla "Home" */}
@@ -38,20 +38,20 @@ const StackNavigation = (): React.ReactNode => {
               }}>
               <Image
                 source={require('../assets/millionanduptitle.png')}
-                style={{width: 240, height: 60}}
+                style={{ width: 240, height: 60 }}
               />
             </View>
           ),
           headerTitleAlign: 'center',
           headerStyle: {
-            height: 36 + (StatusBar.currentHeight || 40),
+            height: 36 + (StatusBar.currentHeight || 80),
           },
           headerBackground: () => (
             <LinearGradient
               colors={['#1D006B', '#5917D7']}
-              style={{flex: 1}}
-              start={{x: 0, y: 0}}
-              end={{x: 1, y: 0}}
+              style={{ flex: 1 }}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 0 }}
             />
           ),
         }}
@@ -98,29 +98,30 @@ const StackNavigation = (): React.ReactNode => {
               }}>
               <Image
                 source={require('../assets/millionanduptitle.png')}
-                style={{width: 240, height: 60}}
+                style={{ width: 240, height: 60 }}
               />
             </View>
           ),
           headerTitleAlign: 'center',
           headerStyle: {
-            height: 36 + (StatusBar.currentHeight || 40),
+            height: 36 + (StatusBar.currentHeight || 80),
           },
           headerBackground: () => (
             <LinearGradient
               colors={['#1D006B', '#5917D7']}
-              style={{flex: 1}}
-              start={{x: 0, y: 0}}
-              end={{x: 1, y: 0}}
+              style={{ flex: 1 }}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 0 }}
             />
           ),
           // Personalización de la imagen de retroceso (atrás) en la barra de navegación
           headerBackImage: () => (
             <Image
               source={require('../assets/back.png')}
-              style={{width: 22, height: 22}}
+              style={{ width: 22, height: 22 }}
             />
           ),
+          headerBackTitleVisible: false,
         }}
       />
     </Stack.Navigator>
