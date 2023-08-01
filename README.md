@@ -1,79 +1,84 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Million And Up Test - App de Consulta de Criptomonedas
 
-# Getting Started
+Bienvenido(a) al repositorio de Million And Up Test, una aplicación móvil desarrollada en React Native que te permite consultar el valor en dólares de diferentes criptomonedas a través de la API de CoinLore.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Requisitos previos
 
-## Step 1: Start the Metro Server
+Antes de ejecutar la aplicación, asegúrate de tener instalado lo siguiente en tu entorno de desarrollo:
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+- Node.js
+- npm (Node Package Manager) o yarn
+- React Native CLI
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Instalación
 
-```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+1. Clona este repositorio en tu máquina local utilizando el siguiente comando:
+```
+git clone https://github.com/edsanol/MillionAndUp.git
+```
+2. Accede al directorio del proyecto:
+```
+cd MillionAndUpTest
+```
+3. Instala las dependencias del proyecto ejecutando:
+```
+npm install
+```
+   o
+```
+yarn install
 ```
 
-## Step 2: Start your Application
+## Ejecución de la aplicación
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+Una vez que hayas instalado todas las dependencias, puedes ejecutar la aplicación en tu simulador o dispositivo móvil usando los siguientes comandos:
 
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+Para iOS:
+```
+react-native run-ios
+```
+Para Android:
+```
+react-native run-android
 ```
 
-### For iOS
+La aplicación se abrirá en tu dispositivo o emulador, permitiéndote explorar y consultar el valor en dólares de varias criptomonedas.
 
-```bash
-# using npm
-npm run ios
+## Arquitectura y Patrones de Diseño
 
-# OR using Yarn
-yarn ios
+Million And Up Test ha sido desarrollado siguiendo los principios del Clean Code y SOLID, con una clean arquitecture basada en tres capas: Domain, Data y Presentation. Cada capa está diseñada para desacoplar los componentes y facilitar el mantenimiento, escalabilidad y testeabilidad del proyecto.
+
+### Capas de la Arquitectura
+
+1. **Domain**: Contiene la lógica de negocio y las entidades del dominio. Aquí se definen las reglas de negocio y se modelan las criptomonedas y otros conceptos clave.
+
+2. **Data**: Se encarga de interactuar con la API de CoinLore y gestionar los datos necesarios para la aplicación. Implementa el patrón Repository para abstraer la fuente de datos y facilitar los cambios futuros en la API o en la librería de peticiones http.
+
+3. **Presentation**: En esta capa, se encuentra la interfaz de usuario y la lógica de presentación. Se ha seguido el patrón Redux y MVVM, recomendado por Google, para gestionar el estado de la aplicación y mantener una separación clara entre la lógica de presentación y los datos.
+
+## Documentación y Tests
+
+El proyecto incluye documentación clara y concisa para facilitar el entendimiento de la arquitectura y la estructura del código. Además, se han desarrollado tests unitarios para asegurar la calidad y robustez del código.
+
+## Buenas Prácticas y Performance
+
+Se ha seguido las mejores prácticas de desarrollo en React Native para garantizar un código limpio y mantenible. También nos hemos preocupado por la performance de la aplicación, optimizando el rendimiento para una experiencia fluida del usuario.
+
+## Estructura del Proyecto
+
+La estructura del proyecto ha sido organizada cuidadosamente para mantener la claridad y facilitar la navegación. A continuación, se presenta un resumen de los directorios más importantes:
+```
+|-- src
+| |-- domain # Lógica de negocio y entidades
+| |-- data # Capa de datos y repositorios
+| |-- presentation # Interfaz de usuario y lógica de presentación
+| |-- config # Contiene la inyección de dependencias
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## Licencia
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+Million And Up Test está bajo la licencia [MIT]([enlace-a-licencia](https://opensource.org/license/mit/)).
 
-## Step 3: Modifying your App
+## Contacto
 
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Si tienes alguna pregunta o sugerencia sobre el proyecto, no dudes en ponerte en contacto conmigo a través de [edsanol99@gmail.com](mailto:edsanol99@gmail.com).
